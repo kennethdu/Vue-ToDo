@@ -1,7 +1,8 @@
 <template>
   <div id="task-form">
     <form @submit.prevent="handleSubmit">
-      <label>Name</label>
+      <label class="label">Name</label>
+      <div class="control">
       <input
         ref="first"
         type="text"
@@ -9,17 +10,20 @@
         v-model="task.name"
         @focus="clearStatus"
         @keypress="clearStatus"
+        class="input is-rounded is-small is-info"
       >
-      <label>Task Description</label>
+      </div>
+      <label class="label">Task Description</label>
       <input
         type="text"
         :class="{ 'has-error': submitting && invalidDescription }"
         v-model="task.description"
         @focus="clearStatus"
+        class="input is-rounded is-small is-info"
       >
       <p v-if="error && submitting" class="error-message">❗Please fill out all required fields</p>
       <p v-if="success" class="success-message">✅ task successfully added</p>
-      <button>Add task</button>
+      <button class="button is-link">Add task</button>
     </form>
   </div>
 </template>
@@ -74,7 +78,7 @@ export default {
 };
 </script>
 
-<style lang="css" scoped>
+<style>
 form {
   margin-bottom: 2rem;
 }
@@ -90,4 +94,10 @@ form {
 .success-message {
   color: #32a95d;
 }
+
+#task-form{
+  width: 50%;
+  margin-left: 25%
+}
+
 </style>

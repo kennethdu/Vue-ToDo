@@ -1,7 +1,7 @@
 <template>
   <div id="task-table">
     <p v-if="tasks.length < 1" class="empty-table">No tasks</p>
-    <table v-else>
+    <table class="table is-fullwidth" v-else>
       <thead>
         <tr>
           <th>Name</th>
@@ -20,12 +20,12 @@
           </td>
           <td v-else>{{task.description}}</td>
           <td v-if="editing === task.id">
-            <button @click="editTask(task)">Save</button>
-            <button class="muted-button" @click="editing = null">Cancel</button>
+            <button class="button is-link" @click="editTask(task)">Save</button>
+            <button class="muted-button button is-link" @click="editing = null">Cancel</button>
           </td>
           <td v-else>
-            <button @click="editMode(task.id)">Edit</button>
-            <button @click="$emit('delete:task', task.id)">Delete</button>
+            <button class="button is-link" @click="editMode(task.id)">Edit</button>
+            <button class="button is-link" @click="$emit('delete:task', task.id)">Delete</button>
           </td>
         </tr>
       </tbody>
@@ -58,12 +58,9 @@ export default {
 };
 </script>
 
-<style lang="css" scoped>
-button {
-  margin: 0 0.5rem 0 0;
-}
-input {
-  margin: 0;
+<style>
+.button {
+  margin: 1%;
 }
 .empty-table {
   text-align: center;

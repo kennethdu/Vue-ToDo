@@ -1,20 +1,20 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+  <div id="app" class="container">
+    <Header/>
     <ToDoForm @add:task="addTask"/>
-    <ToDoTable :tasks="tasks"
-    @delete:task="deleteTask"
-    @edit:task="editTask"/>
+    <ToDoTable :tasks="tasks" @delete:task="deleteTask" @edit:task="editTask"/>
   </div>
 </template>
 
 <script>
+import Header from './components/Header'
 import ToDoTable from "./components/ToDoTable";
 import ToDoForm from "./components/ToDoForm";
 
 export default {
   name: "app",
   components: {
+    Header,
     ToDoTable,
     ToDoForm
   },
@@ -59,29 +59,35 @@ export default {
         console.error(error);
       }
     },
-    async editTask(id, updatedTask){
+    async editTask(id, updatedTask) {
       try {
-        const response = await fetch (`https://my-json-server.typicode.com/kennethdu/to-do-vue-json/tasks/${id}`, {
-          method: 'PUT',
-          body: JSON.stringify(updatedTask),
-          headers: {
-            "Content-type": "application/json; charset=UTF-8"
+        const response = await fetch(
+          `https://my-json-server.typicode.com/kennethdu/to-do-vue-json/tasks/${id}`,
+          {
+            method: "PUT",
+            body: JSON.stringify(updatedTask),
+            headers: {
+              "Content-type": "application/json; charset=UTF-8"
+            }
           }
-        })
-        const data = await response.json()
-        this.tasks = this.tasks.map(tasks => tasks.id === id ? data : tasks)
-      } catch (error){
-        console.error(error)
+        );
+        const data = await response.json();
+        this.tasks = this.tasks.map(tasks => (tasks.id === id ? data : tasks));
+      } catch (error) {
+        console.error(error);
       }
     },
-    async deleteTask(id){
-      try{
-        await fetch(`https://my-json-server.typicode.com/kennethdu/to-do-vue-json/tasks/${id}`, {
-          method: 'DELETE'
-        })
-        this.tasks = this.tasks.filter(tasks => tasks.id !== id)
-      } catch (error){
-        console.error(error)
+    async deleteTask(id) {
+      try {
+        await fetch(
+          `https://my-json-server.typicode.com/kennethdu/to-do-vue-json/tasks/${id}`,
+          {
+            method: "DELETE"
+          }
+        );
+        this.tasks = this.tasks.filter(tasks => tasks.id !== id);
+      } catch (error) {
+        console.error(error);
       }
     }
   }
@@ -90,11 +96,6 @@ export default {
 
 <style>
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
