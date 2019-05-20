@@ -5,7 +5,7 @@
       <thead>
         <tr>
           <th>Name</th>
-          <th>Description</th>
+          <th>Task Description</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -49,8 +49,10 @@ export default {
       this.editing = id;
     },
     editTask(task) {
-      if (task.name === "" || task.description === "") return;
+      if (task.name === "" || task.description === "") return
+
       this.$emit("edit:task", task.id, task);
+      this.editing = null;
     }
   }
 };

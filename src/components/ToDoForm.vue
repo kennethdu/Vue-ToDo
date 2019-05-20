@@ -1,7 +1,7 @@
 <template>
   <div id="task-form">
     <form @submit.prevent="handleSubmit">
-      <label>Task Name</label>
+      <label>Name</label>
       <input
         ref="first"
         type="text"
