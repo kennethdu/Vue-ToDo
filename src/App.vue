@@ -35,7 +35,6 @@ export default {
           "https://my-json-server.typicode.com/kennethdu/to-do-vue-json/tasks"
         );
         const data = await response.json();
-        console.log(data);
         this.tasks = data;
       } catch (error) {
         console.error(error);

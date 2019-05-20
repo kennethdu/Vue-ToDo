@@ -1,5 +1,23 @@
 # Vue-To-Do
 
+## Description
+Basic To Do List Application with Crud Functionality 
+
+# Technologies Used
+* Vue.js
+* ES6
+* Javascript
+* Buefy
+* Vue CLI
+
+# Screenshots
+
+## Web
+## ![Screenshot](VueToDoWeb.PNG)
+
+## Mobile
+## ![Screenshot](VueToDoMobile.PNG)
+
 ## Project setup
 ```
 npm install
@@ -27,3 +45,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## *Support and contact details*
+Contact: Kenneth Du, kennethdu3@gmail.com
