@@ -1,7 +1,9 @@
 # Vue-To-Do
 
 ## Description
-Basic To Do List Application with Crud Functionality 
+Basic To Do List Application with Crud Functionality utilizing a Rest API
+
+Demo Link: https://vue-todo-kdu.netlify.com/ 
 
 # Technologies Used
 * Vue.js
@@ -9,6 +11,7 @@ Basic To Do List Application with Crud Functionality
 * Javascript
 * Buefy
 * Vue CLI
+* Json-Server
 
 # Screenshots
 
