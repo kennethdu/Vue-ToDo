@@ -22,7 +22,7 @@
         class="input is-rounded is-small is-info"
       >
       <p v-if="error && submitting" class="error-message">❗Please fill out all required fields</p>
-      <p v-if="success" class="success-message">✅ task successfully added</p>
+      <p v-if="success" class="success-message">✅ Task Successfully Added</p>
       <button class="button is-link">Add task</button>
     </form>
   </div>
